@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId "com.kot.vid"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionName versions.name
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation libs.supportAppCompact
+    implementation libs.designLib
+    implementation libs.kotlin
+    implementation libs.constrainLyt
+    implementation libs.recyclerView
+    implementation libs.cardView
+    //rx-java / android
+    implementation libs.rxAndroid
+    implementation libs.rxJava
+    implementation libs.gSignIn
+    implementation libs.gAuth
+    implementation libs.playServiceBase
+
+    // ViewModel and LiveData
+    implementation libs.archLifeCycleExtns
+
+    implementation libs.apiClient exclude module: 'httpclient'
+    implementation libs.apiYoutube
+    implementation libs.picasso
+    testImplementation libs.testJunit
+
+    //implementation libs.dagger
+    //implementation libs.daggerAndroidSupport
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //kapt 'com.android.databinding:compiler:3.1.4'
+}
+
+//apply plugin: 'com.google.gms.google-services'
+

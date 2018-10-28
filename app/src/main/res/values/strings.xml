@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">KotVid</string>
+    <string name="server_client_id">670043583488-iqts6khjo8cvc5g4p0o4236t9d15m59t.apps.googleusercontent.com</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="thumbnail">thumbnail</string>
+    <string name="image">image</string>
+    <string name="profile">Profile</string>
+    <string name="delete">delete</string>
+    <string name="home">Home</string>
+    <string name="subs">Subscribed</string>
+    <string name="NA">na</string>
+    <string name="like">Like</string>
+    <string name="no_subsc_found">No Subscriptions found</string>
+    <string name="logout">logout</string>
+
+</resources>
